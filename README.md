@@ -46,6 +46,22 @@
     - 如何查壳
     - smali语法
     - davilk指令
+    - 如何防打包
+    - 如何防签名校验
+    - Android App加固原理分析(说一个加固的思路)
+    - 防御思路
+        - 对抗静态分析
+            - 代码混淆技术 ProGuard
+            - NDK保护
+            - 壳
+        - 对抗动态调试 
+            - android:debuggable="false"，让程序不可调试
+            - android.os.Debug.isDebuggerConnected()
+            - 检测模拟器
+        - 防止重编译
+            - 检查签名 Eclipse自带的调试版密钥文件生成的apk文件的hash值,与上面的函数获取的hash比较
+            - 检测Dex文件的Hash
+            - 
     
     
 
