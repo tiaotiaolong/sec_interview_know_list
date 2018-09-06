@@ -75,11 +75,9 @@
              - 输出在URL属性中<script src="你的代码">
                 - URL编码
              
-             
-            
-          
-            
-            
+        - **推荐阅读**
+            - [防御XSS攻击的七条原则](http://www.freebuf.com/articles/web/9977.html) 
+            - [深入理解浏览器解析机制和XSS向量编码](https://www.cnblogs.com/b1gstar/p/5996549.html)   
 
 - **CSRF相关**
     - 只校验Refer可以吗
