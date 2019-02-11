@@ -92,42 +92,79 @@
     
 - **sql注入漏洞相关**
     - 注入的类型
-        - 普通注入
+        - 普通注入(有数据库回显)
             - 数字型注入
             - 字符型注入
+            
         - 盲注
             - 什么是盲注
             - 三种类型
                 - 基于布尔类型的盲注
                     - left()
+                    - substr()
                     - version()
                     - ascii()
+                    - user()
                     - database()
+                    - @@basedir
+                    
                 - 基于报错的盲注
+                    - double数值类型超出范围
+                    - bigint溢出
+                    - xpath函数报错注入
+                    - extractvalue()
+                    - floor() rand() group by
+                    
                 - 基于时间延时的盲注
                     - sleep()
                     - benchmark()
+        
+        - 堆叠注入
+        
+        - order by注入
+                    
+        
         - 宽字节注入
             - 1.php?id='1%df反斜杠' (其中反斜杠为%5c,%df%5c在GBK编码下可以变成'蓮' 类似于这个字，那个字我不会打，原谅我没文化) 变成 1.php?id='1蓮'
+            - 将 \' 中的 \ 过滤掉，例如可以构造 %**%5c%5c%27 ，后面的 %5c 会被前面的 %5c 注释掉。
+            - 宽字节注入的修复方案
+            
         - URLDecode二次注入
             - 浏览器编码完之后WebServer会自动解码的，如果后端程序误用urldecode函数会造成此类情况(1.php?id=1%2527==>(WebServer)1.php?id=1%27==>(urldecode)1.php?id=1')
         
     - 检查注入的思路
-        - and or 看输出
+        - 通过加单引号 双引号看看是否有报错。
+            - 有报错（不一定有注入）：
+                - 通过拼接语句来进行状态判断
+                    - and ,or
+                    
+            - 没有报错（有可能是盲注）：
+                - 如果关闭错误回显的话 基于报错注入就不可能了。
+                - 构造语句利用延时注入和联合注入进行攻击
+                    - sleep benchmark extractvalue
+                    
         - 看状态码(正常的话是200 注入的话可能会存在500 302等)
+        
+        - 特殊注入需要额外观察：
+            - 宽字节注入
+            - url二次注入
+            
     - mysql注释
         - '--'
         - '#'
         - /* */ 多行注释
     
-    
+    - 掌握
     - 方案(参数化查询会有问题吗？)
     - ORM
     - 如果检测被拦截了怎么绕过（比如sleep被waf拦了）
     - Mysql的提权都有哪些，UDF提权的原理。
     - Sqlmap原理
-
     
+
+- **CRLF注入**
+
+
     
 - **SSRF**
     - 说一个容易出现SSRF漏洞的场景
@@ -135,7 +172,18 @@
     
 
 - **Waf绕过**
-    - 我不会
+    - 架构层绕过WAF
+    - 资源限制角度绕过WAF
+    - 协议层面绕过WAF的检测
+    - 规则层面的绕过
+        - SQL注入
+            - 注释符绕过
+            - 空白符绕过
+            - 函数分隔符
+            - 编码相关
+        - 文件包含
+            - 相对路径 
+            - 绝对路径
     
 - **DDOS防御相关**
     - DDOS攻击的类型
@@ -172,7 +220,10 @@
         - 防止重编译
             - 检查签名 Eclipse自带的调试版密钥文件生成的apk文件的hash值,与上面的函数获取的hash比较
             - 检测Dex文件的Hash
-
+    - android 反调试原理
+        - 检测/proc/pid/status文件中的tracePID 如果不为0的情况，就是说明有程序正在进行反调试，该值为调试的进程的pid。一般在native层会fork一个子进程来循环的读取/proc/pid/status文件中的tracePID字段，如果不为0，直接exit
+    - 绕过反调试的思路
+        - 在JNI_ONLOAD下断点 
 - **浏览器安全**
     - https协议握手过程
     - burp 中间人攻击的原理
@@ -182,6 +233,25 @@
     - 简述一下同源策略
     - 同源策略下如何从a.baidu.com 去获取 www.baidu.com的cookie
     - 网页木马的工作原理
+    - 同源策略下如何解决跨域请求 (分别说说原理和局限性)
+        - document.domain 
+        - jsonp
+        - CORS
+    
+- **PHP安全**
+    - extract变量覆盖
+    - thinkphp SQL注入的分析过程
+    - thinkphp 命令执行的分析过程   
+    
+- **Python**
+    - python参数传递是依靠值传递还是引用传递？
+        - 传入可变对象和传入不可变对象的结果一样吗？ 为什么
+    - python lambda表达式
+    - python 闭包
+    - python 装饰器
+    
+    
+        
     
     
             
