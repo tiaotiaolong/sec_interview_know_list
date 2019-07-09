@@ -240,7 +240,7 @@
      
 
         - dex文件的加载流程:
-            - 见我的另外一篇分析文章。 从android源码看脱壳。 （https://tiaotiaolong.net/2019/07/05/%E4%BB%8Eandroid%E6%BA%90%E7%A0%81%E7%9C%8B%E8%84%B1%E5%A3%B3/）
+            - 见我的另外一篇分析文章。 从android源码看脱壳。 （https://tiaotiaolong.net/）
             
     
 - **浏览器安全**
