@@ -192,14 +192,7 @@
     - DDOS反射攻击基于的协议？为什么基于这个协议？
         
     
-- **Java家族安全**
-    - Spring安全 原理 利用方法
-    - Struts2安全 原理 利用方法
-    - JBoss安全 原理 利用方法
-    - Tomcat安全 原理 利用方法
-    - WebLogic安全 原理 利用方法
-    - Joomla安全 原理 利用方法
-    - IIS(无处可放了)
+
     
 - **android逆向相关**
     - 脱壳的原理
@@ -256,12 +249,41 @@
         - document.domain 
         - jsonp
         - CORS
+    - cookie遵守同源策略吗？(其实是不完全遵守的)。
     
 - **PHP安全**
-    - extract变量覆盖
-    - thinkphp SQL注入的分析过程
-    - thinkphp 命令执行的分析过程   
+    - PHP的那些魔法函数造成的安全问题(当然了，你也可以说程序员不了解php的语言特性 哈哈哈哈)
+        我个人觉得这些魔法函数是代码审计的基础，这也是为什么代码审计都喜欢挑php来捏，语言特性太强大。(这块的东西参考一个git吧 https://github.com/bowu678/php_bugs)
+        包括不限于 
+        - 弱比较==
+        - strops()
+        - intval()
+        - preg_replace /e问题
+        - extract变量覆盖
+        - 数字开头字符串和数字比较。
+        - 00截断(这里我列的肯定是不全，这块我准备慢慢更新吧)
+    - thinkphp SQL注入的分析过程(3.2版本中的find(),delete(),select()分析一下这几个函数，跟踪一下)
+    - thinkphp 命令执行的分析过程(5.x的命令执行)
+    - php的反序列化漏洞，和序列化中的那几个魔法函数。unserialize()
+    - webshell变形(可以利用php的特性)，那么问题来了，有什么好的检测方法或者思路可以杜绝任意的php变形webshell？行为检测？还是其他方案。
+       
+- **Java家族安全**
+    - 著名java发序列化漏洞 Apache的common Collection组件里的调用链的原理和利用思路(这个文章特别多) 后续的很多软件的漏洞都是因为使用了这个apache的组件导致的。
+    - 关于java反序列化一般都是怎么修复的，修复思路是什么？黑名单？
+    - fastjson 反序列化的问题
+    - Spring安全 原理 利用方法
+    - Struts2安全 原理 利用方法
+    - JBoss安全 原理 利用方法
+    - Tomcat安全 原理 利用方法
+    - WebLogic安全 原理 利用方法
+    - Joomla安全 原理 利用方法
+    - jenkins安全问题
     
+- **企业安全相关**
+    - Redis主从命令执行攻击的原理。
+        
+    
+  
 - **Python**
     - python参数传递是依靠值传递还是引用传递？
         - 传入可变对象和传入不可变对象的结果一样吗？ 为什么
