@@ -266,6 +266,8 @@
     - thinkphp 命令执行的分析过程(5.x的命令执行)
     - php的反序列化漏洞，和序列化中的那几个魔法函数。unserialize()
     - webshell变形(可以利用php的特性)，那么问题来了，有什么好的检测方法或者思路可以杜绝任意的php变形webshell？行为检测？还是其他方案。
+    - phpinfo解读 从泄露的phpinfo中你能解读写什么东西?(以前渗透测试时候基本都忽略了，下面有篇文章  http://tiandiwuji.top/posts/23527/)
+    
        
 - **Java家族安全**
     - 著名java发序列化漏洞 Apache的common Collection组件里的调用链的原理和利用思路(这个文章特别多) 后续的很多软件的漏洞都是因为使用了这个apache的组件导致的。
