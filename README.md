@@ -233,7 +233,7 @@
      
 
         - dex文件的加载流程:
-            - 见我的另外一篇分析文章。 从android源码看脱壳。 （https://tiaotiaolong.net/）
+            - 见我的另外一篇分析文章。 从android源码看脱壳。 （https://tiaotiaolong.net/2019/07/05/从android源码看脱壳/）
             
     
 - **浏览器安全**
