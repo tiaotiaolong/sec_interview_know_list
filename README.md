@@ -262,7 +262,7 @@
         - extract变量覆盖
         - 数字开头字符串和数字比较。
         - 00截断(这里我列的肯定是不全，这块我准备慢慢更新吧)
-    - thinkphp SQL注入的分析过程(3.2版本中的find(),delete(),select()分析一下这几个函数，跟踪一下)(我分析的一处https://tiaotiaolong.net/2019/07/19/Thinkphp3.2-SQL注入分析/)
+    - thinkphp SQL注入的分析过程(3.2版本中的find(),delete(),select()分析一下这几个函数，跟踪一下)(我分析的一处https://tiaotiaolong.net/2019/07/19/Thinkphp3.2-SQL注入分析/)[tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)
     - thinkphp 命令执行的分析过程(5.x的命令执行)
     - php的反序列化漏洞，和序列化中的那几个魔法函数。unserialize()
     - webshell变形(可以利用php的特性)，那么问题来了，有什么好的检测方法或者思路可以杜绝任意的php变形webshell？行为检测？还是其他方案。
@@ -270,13 +270,13 @@
     
        
 - **Java家族安全**
-    - 著名java发序列化漏洞 Apache的common Collection组件里的调用链的原理和利用思路(这个文章特别多) 后续的很多软件的漏洞都是因为使用了这个apache的组件导致的。我写了一个关于我的理解(https://tiaotiaolong.net/2019/07/19/Apache-Common组件反序列化原理/)
+    - 著名java发序列化漏洞 Apache的common Collection组件里的调用链的原理和利用思路(这个文章特别多) 后续的很多软件的漏洞都是因为使用了这个apache的组件导致的。我写了一个关于我的理解(https://tiaotiaolong.net/2019/07/19/Apache-Common组件反序列化原理/)同时也收录到我自己的git项目里[tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)
 
     - 关于java反序列化一般都是怎么修复的，修复思路是什么？黑名单？
-    - fastjson 反序列化的问题
+    - fastjson 反序列化的问题 关于fastjson我写了一个连载，在博客里，同时也在我自己的git项目里[tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)
     - Spring安全 原理 利用方法
     - Struts2安全 原理 利用方法
-    - JBoss安全 原理 利用方法
+    - JBoss安全 原理 利用方法 
     - Tomcat安全 原理 利用方法
     - WebLogic安全 原理 利用方法
     - Joomla安全 原理 利用方法
