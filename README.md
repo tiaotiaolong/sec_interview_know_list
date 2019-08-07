@@ -277,9 +277,9 @@
     [tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)
 
     - 关于java反序列化一般都是怎么修复的，修复思路是什么？黑名单？
-    - fastjson 反序列化的问题 关于fastjson我写了一个连载，在博客里，同时也在我自己的git项目里。
+    - fastjson 反序列化的问题 关于fastjson我写了一个连载，在博客里，同时也在我自己的git项目[tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)里。
 
-    [tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)
+    
     - Spring安全 原理 利用方法
     - Struts2安全 原理 利用方法
     - JBoss安全 原理 利用方法 
