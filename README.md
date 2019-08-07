@@ -262,9 +262,9 @@
         - extract变量覆盖
         - 数字开头字符串和数字比较。
         - 00截断(这里我列的肯定是不全，这块我准备慢慢更新吧)
-    - thinkphp SQL注入的分析过程(3.2版本中的find(),delete(),select()分析一下这几个函数，跟踪一下)(我分析的一处https://tiaotiaolong.net/2019/07/19/Thinkphp3.2-SQL注入分析/)
+    - thinkphp SQL注入的分析过程(3.2版本中的find(),delete(),select()分析一下这几个函数，跟踪一下)(我分析的一处https://tiaotiaolong.net/2019/07/19/Thinkphp3.2-SQL注入分析/)收录到我的git项目[tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)中
 
-      [tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)
+    - php fpm未授权访问
     - thinkphp 命令执行的分析过程(5.x的命令执行)
     - php的反序列化漏洞，和序列化中的那几个魔法函数。unserialize()
     - webshell变形(可以利用php的特性)，那么问题来了，有什么好的检测方法或者思路可以杜绝任意的php变形webshell？行为检测？还是其他方案。
@@ -272,21 +272,19 @@
     
        
 - **Java家族安全**
-    - 著名java发序列化漏洞 Apache的common Collection组件里的调用链的原理和利用思路(这个文章特别多) 后续的很多软件的漏洞都是因为使用了这个apache的组件导致的。我写了一个关于我的理解(https://tiaotiaolong.net/2019/07/19/Apache-Common组件反序列化原理/)同时也收录到我自己的git项目里。
-
-    [tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)
+    - 著名java发序列化漏洞 Apache的common Collection组件里的调用链的原理和利用思路(这个文章特别多) 后续的很多软件的漏洞都是因为使用了这个apache的组件导致的。我写了一个关于我的理解(https://tiaotiaolong.net/2019/07/19/Apache-Common组件反序列化原理/)同时也收录到我自己的git项目[tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)里。
 
     - 关于java反序列化一般都是怎么修复的，修复思路是什么？黑名单？
     - fastjson 反序列化的问题 关于fastjson我写了一个连载，在博客里，同时也在我自己的git项目[tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)里。
 
-    
-    - Spring安全 原理 利用方法
-    - Struts2安全 原理 利用方法
-    - JBoss安全 原理 利用方法 
-    - Tomcat安全 原理 利用方法
+    - Spring 安全 原理 利用方法
+    - Struts2 安全 原理 利用方法
+    - JBoss 安全 原理 利用方法 
+    - Tomcat 安全 原理 利用方法
     - WebLogic安全 原理 利用方法
-    - Joomla安全 原理 利用方法
-    - jenkins安全问题
+    - Joomla 安全 原理 利用方法
+    - jenkins 安全问题
+    - JVM学习 可以参考深入理解Java虚拟机。
     
 - **企业安全相关**
     - Redis主从命令执行攻击的原理。
@@ -299,6 +297,17 @@
     - python lambda表达式
     - python 闭包
     - python 装饰器
+
+- **应急响应 or 红蓝对抗**
+    - php扩展门 
+    - pwnginx后门 如果机器存在这种门，该怎么发现它？
+    - 自己纯手动搭建一次nginx,apache,tomcat。做到了解所有目录结构和配置文件。
+ 
+    
+- **安全开发**    
+    - 利用openresty写一个简易版本的WAF。谈谈基于规则检测恶意流量的缺点和优点，那如果是基于算法呢？
+    
+    
     
     
         
