@@ -269,6 +269,8 @@
     - php的反序列化漏洞，和序列化中的那几个魔法函数。unserialize()
     - webshell变形(可以利用php的特性)，那么问题来了，有什么好的检测方法或者思路可以杜绝任意的php变形webshell？行为检测？还是其他方案。
     - phpinfo解读 从泄露的phpinfo中你能解读写什么东西?(以前渗透测试时候基本都忽略了，下面有篇文章  http://tiandiwuji.top/posts/23527/)
+    - Joomla 
+    - php伪协议
     - typecho反序列化漏洞，这个算是一个老洞了，但是我觉得这个漏洞利用魔法函数触发可以说是较为经典。就算是告诉我这个漏洞点，我也找不到利用链啊。[Typecho反序列化漏洞分析](https://www.anquanke.com/post/id/155306)
     
        
@@ -283,7 +285,6 @@
     - JBoss 安全 原理 利用方法 
     - Tomcat 安全 原理 利用方法
     - WebLogic安全 原理 利用方法
-    - Joomla 安全 原理 利用方法
     - jenkins 安全问题
     - JVM学习 可以参考深入理解Java虚拟机。
     
