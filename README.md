@@ -250,6 +250,9 @@
         - jsonp
         - CORS
     - cookie遵守同源策略吗？(其实是不完全遵守的)。
+    - jsonP安全
+    - CORS的整个流程能说一下吗？
+    - 
     
 - **PHP安全**
     - PHP的那些魔法函数造成的安全问题(当然了，你也可以说程序员不了解php的语言特性 哈哈哈哈)
@@ -275,18 +278,24 @@
     
        
 - **Java家族安全**
-    - 著名java发序列化漏洞 Apache的common Collection组件里的调用链的原理和利用思路(这个文章特别多) 后续的很多软件的漏洞都是因为使用了这个apache的组件导致的。我写了一个关于我的理解(https://tiaotiaolong.net/2019/07/19/Apache-Common组件反序列化原理/)同时也收录到我自己的git项目[tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)里。
+    - 著名java反序列化漏洞 Apache的common Collection组件里的调用链的原理和利用思路(这个文章特别多) 后续的很多软件的漏洞都是因为使用了这个apache的组件导致的。我写了一个关于我的理解(https://tiaotiaolong.net/2019/07/19/Apache-Common组件反序列化原理/)同时也收录到我自己的git项目[tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)里。
 
     - 关于java反序列化一般都是怎么修复的，修复思路是什么？黑名单？
     - fastjson 反序列化的问题 关于fastjson我写了一个连载，在博客里，同时也在我自己的git项目[tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)里。
-    - shiro 认证模块反序列化漏洞 大致原理以及利用方式。
-    - Spring 安全 原理 利用方法
-    - Struts2 安全 原理 利用方法
-    - JBoss 安全 原理 利用方法 
-    - Tomcat 安全 原理 利用方法
+    - shiro 认证模块反序列化漏洞 大致原理以及利用方式。shiro在自己并不是采用class.forname()的方式进行加载的，导致无法支持数组类型的装载，在调用链上有依赖性。
+    - shiro的密码学安全问题，PaddingOracle安全问题。
+    - Spring 安全 jndi注入和其他好多次的SpEL表达式注入，针对表达式注入有什么好的思路修复吗。
+    - Struts2 安全 我觉得和spring表达式安全问题差不多，逐渐被淘汰，可以先去理解SpEL。
+    - JBoss 安全 
+    - Tomcat 安全 put类型文件上传 和 最近新出的GhostCat
     - WebLogic安全 原理 利用方法
     - jenkins 安全问题
-    - JVM学习 可以参考深入理解Java虚拟机。
+    - ysoserial你真的会了吗？里面几十种调用链，光commoncollection系列目前就7个，可以好好的用idea调试一下ysoserial，你会发现ysoserial的调用链太精彩了。
+    - JVM学习 可以参考深入理解Java虚拟机。学习JVM主要对我们理解类加载器装载类的过程有很大帮助，对反序列化的理解的帮助是巨大的。
+    - java动态代理，反射，spring的IOC。
+    - springboot快速创建一个简单的增删改查项目，使用maven构建，有助于我们复现漏洞环境，总不能依赖于docker吧。
+    - 利用RMI JNDI注入来完成命令执行的模式是怎样的，了解一下RMI协议，说说rmi的调用过程。
+    
     
 - **企业安全相关**
     - Redis主从命令执行攻击的原理。
@@ -299,6 +308,7 @@
     - python lambda表达式
     - python 闭包
     - python 装饰器
+    
 
 - **应急响应 or 红蓝对抗**
     - php扩展门 
