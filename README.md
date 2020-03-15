@@ -295,7 +295,7 @@
     - java动态代理，反射，spring的IOC。
     - springboot快速创建一个简单的增删改查项目，使用maven构建，有助于我们复现漏洞环境，总不能依赖于docker吧。
     - 利用RMI JNDI注入来完成命令执行的模式是怎样的，了解一下RMI协议，说说rmi的调用过程。
-    
+    - JDK7u21 调用链 https://tiaotiaolong.net/2020/03/15/JDK7U21调用链/
     
 - **企业安全相关**
     - Redis主从命令执行攻击的原理。
