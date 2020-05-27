@@ -161,6 +161,8 @@
     - 如果检测被拦截了怎么绕过（比如sleep被waf拦了）
     - Mysql的提权都有哪些，UDF提权的原理。
     - Sqlmap原理
+    - 在SSM框架中，Mybatis注入是什么情况造成的？#{},${}有什么区别，mybaties的预编译是如何实现的。
+    - 什么情况下Mybatis必须使用${},为什么只能使用${}。
     
 
 - **CRLF注入**
@@ -170,9 +172,12 @@
 - **SSRF**
     - 说一个容易出现SSRF漏洞的场景
     - 如果过滤了以http开头的协议怎么绕过
+    - 利用DNS重绑定来绕过SSRF的原理。
+    - SSRF的地方也是可以跟伪协议在一起利用的。
     
 
 - **Waf绕过**
+    - 绕过的本质是什么，是在寻找2个或者多个集合之间特性的差异。利用这些差异点进行绕过。
     - 架构层绕过WAF
     - 资源限制角度绕过WAF
     - 协议层面绕过WAF的检测
@@ -252,7 +257,7 @@
     - cookie遵守同源策略吗？(其实是不完全遵守的)。
     - jsonP安全
     - CORS的整个流程能说一下吗？
-    - 
+    - CORS跟CSRF之前有什么联系吗？能把这个问题想明白，前端跨域这块算是可以了。
     
 - **PHP安全**
     - PHP的那些魔法函数造成的安全问题(当然了，你也可以说程序员不了解php的语言特性 哈哈哈哈)
@@ -263,16 +268,20 @@
         - intval()
         - preg_replace /e问题
         - extract变量覆盖
+        - 当然了 变量覆盖的点还有 $$ 等
         - 数字开头字符串和数字比较。
-        - 00截断(这里我列的肯定是不全，这块我准备慢慢更新吧)
+        - 00截断(这里我列的肯定是不全，这块我准备慢慢更新吧)截断应该在5.3之前把。
+        - php命令注入怎么防御
+        - escapeshellcmd和escapeshellargs2个函数一起使用会造成什么安全问题。
     - thinkphp SQL注入的分析过程(3.2版本中的find(),delete(),select()分析一下这几个函数，跟踪一下)(我分析的一处https://tiaotiaolong.net/2019/07/19/Thinkphp3.2-SQL注入分析/)收录到我的git项目[tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)中
 
     - php fpm未授权访问
-    - thinkphp 命令执行的分析过程(5.x的命令执行)
+    - php-fpm跟nginx搭配的情况下，可以通过nginx的特殊配置造成代码执行。
+    - thinkphp 命令执行的分析过程(5.x的命令执行) 
     - php的反序列化漏洞，和序列化中的那几个魔法函数。unserialize()
     - webshell变形(可以利用php的特性)，那么问题来了，有什么好的检测方法或者思路可以杜绝任意的php变形webshell？行为检测？还是其他方案。
     - phpinfo解读 从泄露的phpinfo中你能解读写什么东西?(以前渗透测试时候基本都忽略了，下面有篇文章  http://tiandiwuji.top/posts/23527/)
-    - Joomla 
+    - Joomla 的反序列化 这个比较经典 涉及到了php构造对象注入。
     - php伪协议
     - typecho反序列化漏洞，这个算是一个老洞了，但是我觉得这个漏洞利用魔法函数触发可以说是较为经典。就算是告诉我这个漏洞点，我也找不到利用链啊。[Typecho反序列化漏洞分析](https://www.anquanke.com/post/id/155306)
     
@@ -288,14 +297,18 @@
     - Struts2 安全 我觉得和spring表达式安全问题差不多，逐渐被淘汰，可以先去理解SpEL。
     - JBoss 安全 
     - Tomcat 安全 put类型文件上传 和 最近新出的GhostCat
-    - WebLogic安全 原理 利用方法
+    - WebLogic安全 原理 利用方法  本质问题是java的xmldecode的反序列化问题。这个调试起来比较有难度！
     - jenkins 安全问题
     - ysoserial你真的会了吗？里面几十种调用链，光commoncollection系列目前就7个，可以好好的用idea调试一下ysoserial，你会发现ysoserial的调用链太精彩了。
     - JVM学习 可以参考深入理解Java虚拟机。学习JVM主要对我们理解类加载器装载类的过程有很大帮助，对反序列化的理解的帮助是巨大的。
     - java动态代理，反射，spring的IOC。
     - springboot快速创建一个简单的增删改查项目，使用maven构建，有助于我们复现漏洞环境，总不能依赖于docker吧。
+    - SSM框架可以不会写，但是要会看懂代码之间的逻辑运行关系，会读懂每个xml文件，便于审计，开发的话可以直接使用springboot。
     - 利用RMI JNDI注入来完成命令执行的模式是怎样的，了解一下RMI协议，说说rmi的调用过程。
     - JDK7u21 调用链 https://tiaotiaolong.net/2020/03/15/JDK7U21调用链/
+    - RMI和LDAP攻击在java的高版本是有防御机制的，那如何绕过该防御机制。
+    
+    
     
 - **企业安全相关**
     - Redis主从命令执行攻击的原理。
@@ -314,12 +327,19 @@
     - php扩展门 
     - pwnginx后门 如果机器存在这种门，该怎么发现它？
     - 自己纯手动搭建一次nginx,apache,tomcat。做到了解所有目录结构和配置文件。
+    - apache的扩展后门都有哪些？可以自己动手搭建一下，那这种后门的缺点是什么？
+    
  
     
 - **安全开发**    
     - 利用openresty写一个简易版本的WAF。谈谈基于规则检测恶意流量的缺点和优点，那如果是基于算法呢？
+    - 利用Celery实现自己的扫描器，说说扫描器的思路。
+    - 如何设计一款白盒扫描器，可以定位到漏洞点和追踪数据流向。
+    - 如果让你设计一个简单的web框架，你如何设计。
     
     
+- **开放问题** 
+    - XXE跟SSRF你觉得有什么关系吗，相同点跟不同点都可以说说。
     
     
         
