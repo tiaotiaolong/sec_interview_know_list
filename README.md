@@ -248,7 +248,7 @@
     - CSP
     - 除了公私钥密码加密体系还有其他可以确保传输安全的吗？
     - 简述一下同源策略
-    - 同源策略下如何从a.baidu.com 去获取 www.baidu.com的cookie
+    - 同源策略下如何从 a.baidu.com 去获取 www.baidu.com 的 Cookie
     - 网页木马的工作原理
     - 同源策略下如何解决跨域请求 (分别说说原理和局限性)
         - document.domain 
@@ -264,7 +264,7 @@
         我个人觉得这些魔法函数是代码审计的基础，这也是为什么代码审计都喜欢挑php来捏，语言特性太强大。(这块的东西参考一个git吧 https://github.com/bowu678/php_bugs)
         包括不限于 
         - 弱比较==
-        - strops()
+        - strpos()
         - intval()
         - preg_replace /e问题
         - extract变量覆盖
@@ -273,7 +273,7 @@
         - 00截断(这里我列的肯定是不全，这块我准备慢慢更新吧)截断应该在5.3之前把。
         - php命令注入怎么防御
         - escapeshellcmd和escapeshellargs2个函数一起使用会造成什么安全问题。
-    - thinkphp SQL注入的分析过程(3.2版本中的find(),delete(),select()分析一下这几个函数，跟踪一下)(我分析的一处https://tiaotiaolong.net/2019/07/19/Thinkphp3.2-SQL注入分析/)收录到我的git项目[tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)中
+    - thinkphp SQL注入的分析过程(3.2版本中的find(),delete(),select()分析一下这几个函数，跟踪一下)(我分析的一处 https://tiaotiaolong.net/2019/07/19/Thinkphp3.2-SQL注入分析/ )收录到我的git项目 [tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv) 中
 
     - php fpm未授权访问
     - php-fpm跟nginx搭配的情况下，可以通过nginx的特殊配置造成代码执行。
@@ -287,7 +287,7 @@
     
        
 - **Java家族安全**
-    - 著名java反序列化漏洞 Apache的common Collection组件里的调用链的原理和利用思路(这个文章特别多) 后续的很多软件的漏洞都是因为使用了这个apache的组件导致的。我写了一个关于我的理解(https://tiaotiaolong.net/2019/07/19/Apache-Common组件反序列化原理/)同时也收录到我自己的git项目[tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)里。
+    - 著名java反序列化漏洞 Apache的common Collection组件里的调用链的原理和利用思路(这个文章特别多) 后续的很多软件的漏洞都是因为使用了这个apache的组件导致的。我写了一个关于我的理解( https://tiaotiaolong.net/2019/07/19/Apache-Common组件反序列化原理/ )同时也收录到我自己的git项目 [tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv) 里。
 
     - 关于java反序列化一般都是怎么修复的，修复思路是什么？黑名单？
     - fastjson 反序列化的问题 关于fastjson我写了一个连载，在博客里，同时也在我自己的git项目[tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)里。
