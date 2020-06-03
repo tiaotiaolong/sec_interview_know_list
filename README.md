@@ -27,6 +27,8 @@
         - 如果输出点在css style标签中 要注意expression表达式 import等之类
 
         - **XSS编码方案(方案普遍性很高，具体要看业务场景)**(大家自行思考为什么这么做？)
+        - 关于xss编码与浏览器解码的原因 这个是个硬核知识点，基本上前端的xss安全绕过问题都是基于浏览器的特性来发现的，推荐阅读研究：[深入理解浏览器解析机制和XSS向量编码](http://bobao.360.cn/learning/detail/292.html) 这个可以解释很多标签 比如svg标签。
+       
             - 当输出点出现在HTML标签属性：
             
              ```
@@ -79,11 +81,15 @@
              
         - **推荐阅读**
             - [防御XSS攻击的七条原则](http://www.freebuf.com/articles/web/9977.html) 
-            - [深入理解浏览器解析机制和XSS向量编码](https://www.cnblogs.com/b1gstar/p/5996549.html)   
+            - [深入理解浏览器解析机制和XSS向量编码](https://www.cnblogs.com/b1gstar/p/5996549.html)  
+        
+        
 
 - **CSRF相关**
     - 只校验Refer可以吗
+    - samesite防御csrf的原理。
     - token放在哪里？放在cookie里可以吗？不失效可以吗？
+    - 如果后端没有session，那应该怎么防御。
     
 - **XXE漏洞相关**
     - XML文件格式
@@ -291,6 +297,7 @@
 
     - 关于java反序列化一般都是怎么修复的，修复思路是什么？黑名单？
     - fastjson 反序列化的问题 关于fastjson我写了一个连载，在博客里，同时也在我自己的git项目[tiaoVulenv](https://github.com/tiaotiaolong/tiaoVulenv)里。
+    - 说了fastjson 也提一下jackson，跟fastjson如出一辙，很有同感。
     - shiro 认证模块反序列化漏洞 大致原理以及利用方式。shiro在自己并不是采用class.forname()的方式进行加载的，导致无法支持数组类型的装载，在调用链上有依赖性。
     - shiro的密码学安全问题，PaddingOracle安全问题。
     - Spring 安全 jndi注入和其他好多次的SpEL表达式注入，针对表达式注入有什么好的思路修复吗。
@@ -336,6 +343,14 @@
     - 利用Celery实现自己的扫描器，说说扫描器的思路。
     - 如何设计一款白盒扫描器，可以定位到漏洞点和追踪数据流向。
     - 如果让你设计一个简单的web框架，你如何设计。
+    - 针对白盒代码审计，应该如何设计一个系统，静态的可以针对有问题的变量进行自动的回溯？
+    - 接着上面的问题，有什么思路可以动态的回溯呢？
+    
+
+- **认证**
+    - OAUTH哪些地方容易出现安全问题
+    - JWT的安全点在哪里
+    
     
     
 - **开放问题** 
